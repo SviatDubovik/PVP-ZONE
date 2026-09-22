@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D Шутер — Нож · Deagle · AK-47 · Миниган</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="hud">
+  <div id="crosshair">
+    <div class="ch" id="ch-n"></div>
+    <div class="ch" id="ch-s"></div>
+    <div class="ch" id="ch-e"></div>
+    <div class="ch" id="ch-w"></div>
+    <div class="ch-dot"></div>
+  </div>
+  <div id="hitmarker"></div>
+
+  <div id="health-wrap">
+    <div id="hpbar"><span id="hpval">100</span></div>
+    <div id="hp-label">ЗДОРОВЬЕ</div>
+  </div>
+
+  <div id="weapon-info">
+    <div id="wpn-name">НОЖ</div>
+    <div id="ammo">—</div>
+  </div>
+
+  <div id="stats">
+    <div id="kills">УБИЙСТВ: 0</div>
+    <div id="wave">ВОЛНА: 1</div>
+    <div id="coins">МОНЕТЫ: 0</div>
+    <div id="till">АПТЕЧКА ЧЕРЕЗ: 10</div>
+  </div>
+
+  <div id="selectors">
+    <span class="sel" data-w="0">1 · НОЖ</span>
+    <span class="sel" data-w="1">2 · DEAGLE</span>
+    <span class="sel" data-w="2">3 · AK-47</span>
+    <span class="sel" data-w="3">4 · ДРОБОВИК</span>
+    <span class="sel" data-w="4">5 · ВИНТОВКА</span>
+    <span class="sel" data-w="5">6 · МИНИГАН</span>
+  </div>
+
+  <div id="reload-msg">ПЕРЕЗАРЯДКА…</div>
+  <div id="dmg-vignette"></div>
+  <div id="kill-feed"></div>
+</div>
+
+<div id="overlay">
+  <!-- ====== МАГАЗИН / ГЛАВНОЕ МЕНЮ ====== -->
+  <div id="shop-screen" class="screen">
+    <div class="mm-head">
+      <h1>3D ШУТЕР</h1>
+      <div class="mm-coins">МОНЕТЫ: <b id="mm-coins">0</b></div>
+    </div>
+    <div class="mm-cols">
+      <div class="mm-col mm-accessories">
+        <h2>АКСЕССУАРЫ</h2>
+        <div id="acc-list" class="shop-list"></div>
+      </div>
+      <div class="mm-stage">
+        <div class="mm-stage-hint">Подберите внешний вид</div>
+      </div>
+      <div class="mm-col mm-weapons">
+        <h2>ОРУЖИЕ</h2>
+        <div id="wpn-list" class="shop-list"></div>
+      </div>
+    </div>
+    <div class="mm-bottom">
+      <button id="mm-play">ИГРАТЬ</button>
+    </div>
+  </div>
+
+  <!-- ====== ПАУЗА ====== -->
+  <div id="pause-screen" class="screen hidden">
+    <h1 class="big">ПАУЗА</h1>
+    <button id="ps-resume" class="big-btn">ПРОДОЛЖИТЬ</button>
+    <button id="ps-shop" class="big-btn">МАГАЗИН</button>
+    <button id="ps-menu" class="big-btn">ГЛАВНОЕ МЕНЮ</button>
+  </div>
+
+  <!-- ====== СМЕРТЬ ====== -->
+  <div id="death-screen" class="screen hidden">
+    <h1 class="big red">ВЫ ПОГИБЛИ</h1>
+    <p id="death-info" class="death-info"></p>
+    <button id="ps-retry" class="big-btn">ИГРАТЬ СНОВА</button>
+  </div>
+
+  <p id="load-warn" class="warn hidden">⚠ Не удалось загрузить Three.js — проверьте подключение к интернету.</p>
+</div>
+
+<script src="three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
